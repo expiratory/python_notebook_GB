@@ -23,6 +23,9 @@ class Notebook:
                 item.print_note()
                 i += 1
 
+    def get_notebook(self):
+        return self.notebook
+
     def change_note(self):
         self.print_notebook()
         print('Введите номер заметки, которую вы хотите редактировать: ')

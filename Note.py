@@ -7,8 +7,11 @@ class Note:
     creation_time = dt.datetime.now()
     last_change_time = dt.datetime.now()
 
-    def __init__(self):
-        pass
+    def __init__(self, title='', content='', creation_time=str(dt.datetime.now()), last_change_time=str(dt.datetime.now())):
+        self.title = title
+        self.content = content
+        self.creation_time = dt.datetime.strptime(creation_time, '%Y-%m-%d %H:%M:%S.%f')
+        self.last_change_time = dt.datetime.strptime(last_change_time, '%Y-%m-%d %H:%M:%S.%f')        
 
     def get_title(self):
         return self.title
@@ -44,3 +47,6 @@ class Note:
               str(self.last_change_time) + ';\n'
               + '------------------------------------------------------------------------\n'
               + '###')
+    
+    def to_string(self):
+        return str(self.get_id()) + ';' + self.title + ';' + self.content + ';' + str(self.creation_time) + ';' + str(self.last_change_time)
