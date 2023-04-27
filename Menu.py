@@ -1,21 +1,22 @@
 from Notebook import Notebook
 from Note import Note
 
+
 class Menu:
 
     notebook = Notebook()
-    # note_1 = Note()
-    # note_1.set_title()
-    # note_1.set_content()
-    # note_2 = Note()
-    # note_2.set_title()
-    # note_2.set_content()
-    # note_3 = Note()
-    # note_3.set_title()
-    # note_3.set_content()
-    # notebook.add_note(note_1)
-    # notebook.add_note(note_2)
-    # notebook.add_note(note_3)
+    note_1 = Note()
+    note_1.set_title()
+    note_1.set_content()
+    note_2 = Note()
+    note_2.set_title()
+    note_2.set_content()
+    note_3 = Note()
+    note_3.set_title()
+    note_3.set_content()
+    notebook.add_note(note_1)
+    notebook.add_note(note_2)
+    notebook.add_note(note_3)
 
     def __init__(self):
         pass
@@ -41,6 +42,6 @@ class Menu:
                 note.set_content()
                 self.notebook.add_note(note)
             case 4:
-                pass
+                self.notebook.change_note()
             case 5:
                 self.notebook.delete_note()

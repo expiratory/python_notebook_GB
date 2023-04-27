@@ -1,5 +1,6 @@
 import datetime as dt
 
+
 class Note:
     title = ''
     content = ''
@@ -30,13 +31,16 @@ class Note:
     def get_last_dt(self):
         return self.last_change_time
 
+    def set_last_dt(self):
+        self.last_change_time = dt.datetime.now()
+
     def print_note(self):
-        print('------------------------------------------------------------------------' + '\n'\
-              + 'Заметка № ' + str(self.get_id()) + ';\n'\
-              + 'Заголовок: ' + self.title + ';\n'\
-              + 'Содержание: ' + self.content + ';\n'\
-              + 'Дата и время создания: ' + str(self.creation_time) + ';\n'\
-              + 'Дата и время последнего изменения: ' + str(self.last_change_time) + ';\n'\
-              + '------------------------------------------------------------------------\n'\
+        print('------------------------------------------------------------------------' + '\n'
+              + 'Заметка № ' + str(self.get_id()) + ';\n'
+              + 'Заголовок: ' + self.title + ';\n'
+              + 'Содержание: ' + self.content + ';\n'
+              + 'Дата и время создания: ' + str(self.creation_time) + ';\n'
+              + 'Дата и время последнего изменения: ' +
+              str(self.last_change_time) + ';\n'
+              + '------------------------------------------------------------------------\n'
               + '###')
-    
