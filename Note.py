@@ -10,8 +10,10 @@ class Note:
     def __init__(self, title='', content='', creation_time=str(dt.datetime.now()), last_change_time=str(dt.datetime.now())):
         self.title = title
         self.content = content
-        self.creation_time = dt.datetime.strptime(creation_time, '%Y-%m-%d %H:%M:%S.%f')
-        self.last_change_time = dt.datetime.strptime(last_change_time, '%Y-%m-%d %H:%M:%S.%f')        
+        self.creation_time = dt.datetime.strptime(
+            creation_time, '%Y-%m-%d %H:%M:%S.%f')
+        self.last_change_time = dt.datetime.strptime(
+            last_change_time, '%Y-%m-%d %H:%M:%S.%f')
 
     def get_title(self):
         return self.title
@@ -38,15 +40,15 @@ class Note:
         self.last_change_time = dt.datetime.now()
 
     def print_note(self):
-        print('------------------------------------------------------------------------' + '\n'
+        print('------------------------------------------------------------------------\n'
               + 'Заметка № ' + str(self.get_id()) + ';\n'
-              + 'Заголовок: ' + self.title + ';\n'
-              + 'Содержание: ' + self.content + ';\n'
-              + 'Дата и время создания: ' + str(self.creation_time) + ';\n'
-              + 'Дата и время последнего изменения: ' +
+                + 'Заголовок: ' + self.title + ';\n'
+                + 'Содержание: ' + self.content + ';\n'
+                + 'Дата и время создания: ' + str(self.creation_time) + ';\n'
+                + 'Дата и время последнего изменения: ' +
               str(self.last_change_time) + ';\n'
-              + '------------------------------------------------------------------------\n'
-              + '###')
-    
+                + '------------------------------------------------------------------------\n'
+                + '###')
+
     def to_string(self):
         return str(self.get_id()) + ';' + self.title + ';' + self.content + ';' + str(self.creation_time) + ';' + str(self.last_change_time)
