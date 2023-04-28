@@ -20,4 +20,5 @@ class ImportExport:
                 item = line.split(';')
                 note = Note(item[1], item[2], item[3], item[4])
                 notebook.add_note(note)
+            notebook.get_notebook().sort(key=Note.get_dt)
             notebook.print_notebook()

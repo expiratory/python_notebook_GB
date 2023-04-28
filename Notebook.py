@@ -13,9 +13,11 @@ class Notebook:
         print('Введите номер заметки, которую вы хотите удалить: ')
         choise = int(input())
         del self.notebook[choise-1]
+        self.notebook.sort(key=Note.get_dt)
         self.print_notebook()
 
     def print_notebook(self):
+        self.notebook.sort(key=Note.get_dt)
         i = 1
         for item in self.notebook:
             if isinstance(item, Note):
@@ -27,6 +29,7 @@ class Notebook:
         return self.notebook
 
     def change_note(self):
+        self.notebook.sort(key=Note.get_dt)
         self.print_notebook()
         print('Введите номер заметки, которую вы хотите редактировать: ')
         choise = int(input())
@@ -47,4 +50,5 @@ class Notebook:
                     changable_note.set_title()
                     changable_note.set_content()
                     changable_note.set_last_dt()
+        self.notebook.sort(key=Note.get_dt)
         self.print_notebook()
